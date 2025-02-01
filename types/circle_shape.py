@@ -10,6 +10,9 @@ class Circle_Shape(Shape):
 
     def __str__(self):
         return "Circle"
+    
+    def get_shape_type(self):
+        return ShapeType.CIRCLE
 
     def on_open_size_action(self, widget, unitinfo):
         unit_value = bu_to_unit(self._radius, unitinfo[1])

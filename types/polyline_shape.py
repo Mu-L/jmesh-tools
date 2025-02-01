@@ -17,6 +17,9 @@ class Polyline_Shape(Shape):
             return True
             
         return False
+    
+    def get_shape_type(self):
+        return ShapeType.POLYGON
 
     def create_from_mesh(self, context):
 

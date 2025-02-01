@@ -9,6 +9,9 @@ class Rectangle_Shape(Shape):
 
     def __str__(self):
         return "Rect"
+    
+    def get_shape_type(self):
+        return ShapeType.RECTANGLE
 
     def can_set_center_type(self):
         return True

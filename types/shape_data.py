@@ -11,9 +11,10 @@ class VertexData(bpy.types.PropertyGroup):
     )
 
 class ShapeType(bpy.types.PropertyGroup):
-    CIRCLE = 'CIRCLE'
-    RECTANGLE = 'RECTANGLE'
-    POLYGON = 'POLYGON'
+    CIRCLE = 'Circle'
+    RECTANGLE = 'Rectangle'
+    POLYGON = 'Polygon'
+    CURVE = 'Curve'
 
 class ShapeData(bpy.types.PropertyGroup):
     name: bpy.props.StringProperty(default="Shape")

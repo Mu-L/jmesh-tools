@@ -13,6 +13,7 @@ from ..utils.fc_view_3d_utils import *
 
 from .. utils.textutils import *
 from .. utils.shader_utils import *
+from .. types.shape_data import ShapeType
 
 from bpy_extras.view3d_utils import (
     region_2d_to_location_3d,
@@ -82,6 +83,7 @@ class Shape:
         self.create_batch()
         self._center_2d = None
         self._center_3d = None
+        self._name = None
 
     def get_center(self, mouse_pos_3d, context):
         if context.scene.center_type == "Mouse":
@@ -102,6 +104,16 @@ class Shape:
 
         self._vertex_ctr_m.create_batch(self.get_vertex_mirror(pos))
 
+    def get_shape_type(self):
+        pass
+
+    @property
+    def name(self):
+        return self._name
+    
+    @name.setter
+    def name(self, value):
+        self._name = value
 
     @property
     def vertex_containers(self):

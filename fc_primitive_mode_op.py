@@ -395,15 +395,12 @@ class FC_Primitive_Mode_Operator(bpy.types.Operator):
         return { result }
 
     def generate_unique_shape_name(self, base_name="Shape"):
-        # Zugriff auf die shape_list des aktuellen Scenes
         scene = bpy.context.scene
         existing_names = {shape.name for shape in scene.shape_list}
 
-        # Initialer Zähler
         counter = 1
         unique_name = f"{base_name} {counter}"
         
-        # Prüfen, ob der Name existiert
         while unique_name in existing_names:
             counter += 1
             unique_name = f"{base_name} {counter}"
@@ -414,7 +411,8 @@ class FC_Primitive_Mode_Operator(bpy.types.Operator):
         scene = bpy.context.scene
         new_shape = scene.shape_list.add()
         new_shape.name = self.generate_unique_shape_name()
-        new_shape.shape_type = ShapeType.POLYGON
+        new_shape.shape_type = self.current_shape.get_shape_type()
+        self.current_shape.name = new_shape.name
 
     def create_shape(self, context):
         if self.current_shape.is_none():

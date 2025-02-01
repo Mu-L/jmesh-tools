@@ -2,7 +2,7 @@ bl_info = {
     "name": "JMesh Tools",
     "description": "Hardsurface and mesh tools for Blender",
     "author": "Jayanam",
-    "version": (4, 2, 0, 5),
+    "version": (4, 2, 0, 6),
     "blender": (2, 80, 0),
     "location": "View3D",
     "category": "Object",
@@ -44,8 +44,8 @@ from . fc_mesh_snap_op      import FC_Mesh_Snap_Operator
 from . fc_solidify_op       import FC_SolidifyOperator
 from . fc_cloth_op          import FC_ClothOperator
 from . fc_boolean_mode      import FC_Boolean_Mode_Operator
-from . fc_shapes_panel      import FC_Shapes_Panel
 from . types.shape_data     import VertexData, ShapeData
+from . fc_shape_op          import *
 
 from .types.enums import *
 
@@ -195,8 +195,8 @@ classes = (
     FC_ClothOperator,
     FC_ApplyAllModifiersOperator,
     FC_Boolean_Mode_Operator,
-    FC_Shapes_Panel,
-    VertexData, ShapeData
+    VertexData, ShapeData,
+    SHAPE_OT_Select, SHAPE_OT_Delete
 )
      
     

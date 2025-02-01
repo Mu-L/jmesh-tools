@@ -8,6 +8,9 @@ class Curve_Shape(Shape):
 
     def __str__(self):
         return "Curve"
+    
+    def get_shape_type(self):
+        return ShapeType.CURVE
 
     def can_close(self):
         return self._vertex_ctr.vertex_count >= 2
